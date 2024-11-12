@@ -1,10 +1,11 @@
-fetch('https://api.recursionist.io/random-integer')
-    .then(response => response.json())
+// HTMLファイルのToDoリストを参考にしてください。
+const config = {
+    parentId: "target",
+    url: "https://api.recursionist.io/random-words"
+}
+
+fetch(config.url)
+    .then(res => res.json())
     .then(function(data) {
         console.log(data);
-        afterProcess(data);
     });
-
-function afterProcess(data) {
-    document.getElementById("#target2").innerHTML = `<p class="text-primary">${data}</p>`;
-}
